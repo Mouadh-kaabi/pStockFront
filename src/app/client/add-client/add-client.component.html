@@ -1,0 +1,78 @@
+<div class="row">
+
+    <div class="col-md-6 field" >
+        <h1>Client</h1>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Libelle</label>
+                <input type="text" formControlName="libelle" class="form-control" placeholder="Entrer votre libelle"
+                                        [(ngModel)]="client.libelle" id="libelle"
+                                        [ngClass]="{ 'is-invalid': submitted && f.libelle.errors }" />
+                                    <div *ngIf="submitted && f.libelle.errors" class="invalid-feedback">
+                                        <div *ngIf="f.libelle.errors.required">libelle est obligatoire pour inscrire</div>
+                                    </div>
+               
+            </div>
+
+            <div class="form-group">
+                <label>adresse</label>
+                <input type="text" formControlName="adresse" class="form-control" placeholder="Entrer votre adresse"
+                [(ngModel)]="client.adresse" id="adresse"
+                [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" />
+            <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                <div *ngIf="f.adresse.errors.required">Adresse est obligatoire pour inscrire</div>
+            </div>
+            </div>
+
+            <div class="form-group">
+                <label>Numéro télphone</label>
+                <input type="text" formControlName="tel" class="form-control" placeholder="Entrer votre tel"
+                [(ngModel)]="client.tel" id="tel"
+                [ngClass]="{ 'is-invalid': submitted && f.tel.errors }" />
+            <div *ngIf="submitted && f.tel.errors" class="invalid-feedback">
+                <div *ngIf="f.tel.errors.required">Tel est obligatoire pour inscrire</div>
+            </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" formControlName="email" class="form-control" placeholder="Entrer votre adresse"
+                [(ngModel)]="client.email" id="email"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email est obligatoire pour inscrire</div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label>fax</label>
+                <input type="text" formControlName="fax" class="form-control" placeholder="Entrer votre fax"
+                [(ngModel)]="client.fax" id="fax"
+                [ngClass]="{ 'is-invalid': submitted && f.fax.errors }" />
+            <div *ngIf="submitted && f.fax.errors" class="invalid-feedback">
+                <div *ngIf="f.fax.errors.required">Fax est obligatoire pour inscrire</div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label>login</label>
+                <input type="text" formControlName="login" class="form-control" placeholder="Entrer votre login"
+                [(ngModel)]="client.login" id="login"
+                [ngClass]="{ 'is-invalid': submitted && f.login.errors }" />
+            <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
+                <div *ngIf="f.login.errors.required">login est obligatoire pour inscrire</div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label>pwd</label>
+                <input type="password" formControlName="pwd" class="form-control" placeholder="pwd votre adresse"
+                [(ngModel)]="client.pwd" id="pwd"
+                [ngClass]="{ 'is-invalid': submitted && f.pwd.errors }" />
+            <div *ngIf="submitted && f.pwd.errors" class="invalid-feedback">
+                <div *ngIf="f.pwd.errors.required">Pwd est obligatoire pour inscrire</div>
+            </div>
+            </div>
+
+            <button class="btn btn-primary">Save</button>
+        </form>
+
+    </div>
+</div>

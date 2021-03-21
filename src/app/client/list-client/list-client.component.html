@@ -1,0 +1,59 @@
+<div class="row">
+    
+  
+    <div style="height:700px;overflow:auto;"> 
+    <table class="table table-striped"
+    style="table-layout: fixed; word-wrap: break-word;">
+            <thead>
+                <tr>
+                    <th style="width: 8%;">Libelle</th>
+                    <th style="width: 8%;">Adresse</th>
+                    <th style="width: 8%;">Numéro Télephone</th>
+                    <th style="width: 8%;">Email</th>
+                    <th style="width: 8%;">Fax</th>
+                    <th style="width: 8%;">Login</th>
+                    <th style="width: 8%;">Details</th>
+                    <th style="width: 8%;">Suprimer client</th>
+                    
+                    
+                            
+                </tr>
+            </thead>
+            <tbody>
+                <tr mdbTableCol *ngFor="let client of clients">
+                    <td style="width: 8%">{{client.libelle}}</td>
+                    <td style="width: 8%">{{client.adresse}}</td>
+                    <td style="width: 8%">{{client.tel}}</td>
+                    <td style="width: 8%">{{client.email}}</td>
+                    <td style="width: 8%">{{client.fax}}</td>
+                    <td style="width: 8%">{{client.login}}</td>
+                    <button 
+                    
+                    class="btn btn-info"
+                    style="margin-left: 10px" 
+                    >Details</button>
+
+                    <td style="width: 8%">
+                        <button 
+                        (click)="annulerClient(client.id)"
+                       
+                        class="class=btn btn-danger"
+                        >
+                       
+                                Annuler 
+                         </button>
+                    </td>
+
+                
+                </tr>
+            </tbody>
+        </table>
+
+
+       
+
+
+     
+    
+</div>
+
